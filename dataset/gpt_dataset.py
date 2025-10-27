@@ -14,9 +14,9 @@ class GPTDataset(Dataset):
             self.input_ids.append(torch.tensor(input_chunk))
             self.target_ids.append(torch.tensor(target_chunk))
 
-        def __len__(self):
-            return len(self.input_ids)
-        
-        # 返回数据集的指定行
-        def __getitem__(self, idx):
-            return self.input_ids[idx], self.target_ids[idx]
+    def __len__(self):
+        return len(self.input_ids)
+    
+    # 返回数据集的指定行
+    def __getitem__(self, idx):
+        return self.input_ids[idx], self.target_ids[idx]
